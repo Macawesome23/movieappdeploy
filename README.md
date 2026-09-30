@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# CineVerse - Premium Movie Database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CineVerse is a modern, feature-rich movie and TV series database application built with React. It leverages the TMDB (The Movie Database) API to provide real-time global trending data, deep database metadata, and a highly polished cinematic user interface.
 
-## Available Scripts
+### 🌐 Live Demo
+**[View Live Deployment Here](https://movieappdeploy-lifef80q5-macawesome23s-projects.vercel.app/)**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Global Trending Engine:** Automatically fetches the #1 globally trending movies and TV shows for the week on the home page.
+- **Where to Watch:** Powered by JustWatch data, instantly see which streaming platforms (Netflix, Prime, Hulu, Apple TV) have a movie available to stream, rent, or buy in your region.
+- **Cinematic UI:** Built with Tailwind CSS, featuring glassmorphism navigation, edge-to-edge high-resolution backdrops, and interactive hover-state movie cards.
+- **Advanced Sorting:** Sort the entire TMDB global database by Latest Releases, Oldest Classics, Alphabetical, or Top Rated.
+- **YouTube Trailers:** Integrated video player to watch official movie trailers directly on the database details page.
+- **Personal Watchlist & Ratings:** Save movies to a personal watchlist using persistent local storage and give them your own 5-star rating widget.
+- **Cast & Crew Data:** Explore horizontal carousels of real actor headshots, character names, and deep metadata like global Box Office revenue.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend:** React 18, React Router v6
+- **State Management:** Zustand (with persist middleware for LocalStorage)
+- **Data Fetching:** Axios & TanStack React Query (caching & pagination)
+- **Styling:** Tailwind CSS (v3) & Lucide React (Icons)
+- **API:** TMDB API (configured to use developer bypass domains for strict ISP regions)
+- **Deployment:** Vercel CI/CD
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Running Locally
 
-### `npm run build`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Macawesome23/movieappdeploy.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd movieappdeploy
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+5. Open `http://localhost:3000` to view it in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Note: This project relies on a TMDB API key which is currently hardcoded for demonstration purposes in `src/services/api.js`.*
