@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { ArrowLeft, Loader2, Star, Calendar, Clock, Heart, Tv, Film, Play, X, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Loader2, Star, Calendar, Clock, Heart, Tv, Film, Play, X } from 'lucide-react';
 import { fetchMovieDetails } from '../services/api';
 import { useStore } from '../store/useStore';
 import MovieCard from '../components/MovieCard';

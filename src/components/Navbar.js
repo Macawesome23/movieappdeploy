@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Film, Heart, Search } from 'lucide-react';
+import { Film, Heart } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 const Navbar = () => {
