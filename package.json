@@ -12,6 +12,7 @@
     "lucide-react": "^1.48.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-intersection-observer": "^11.0.1",
     "react-router-dom": "^6.30.6",
     "react-scripts": "5.0.1",
     "use-debounce": "^10.1.1",
