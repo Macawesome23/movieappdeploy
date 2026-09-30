@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, PlayCircle, Tv, Film } from 'lucide-react';
-import { useStore } from '../store/useStore';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToWatchlist, removeFromWatchlist } from '../store/watchlistSlice';
 
 const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const MovieCard = ({ movie }) => {
-  const { watchlist, addToWatchlist, removeFromWatchlist } = useStore();
+  const watchlist = useSelector((state) => state.watchlist.watchlist);
+  const dispatch = useDispatch();
   
   const isWatchlisted = watchlist.some((m) => m.id === movie.id);
 
   const toggleWatchlist = (e) => {
     e.preventDefault();
     if (isWatchlisted) {
-      removeFromWatchlist(movie.id);
+      dispatch(removeFromWatchlist(movie.id));
     } else {
-      addToWatchlist({ ...movie, media_type: movie.media_type || 'movie' });
+      dispatch(addToWatchlist({ ...movie, media_type: movie.media_type || 'movie' }));
     }
   };
 

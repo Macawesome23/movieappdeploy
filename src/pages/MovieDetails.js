@@ -3,7 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Loader2, Star, Calendar, Clock, Heart, Tv, Film, Play, X } from 'lucide-react';
 import { fetchMovieDetails } from '../services/api';
-import { useStore } from '../store/useStore';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToWatchlist, removeFromWatchlist, rateMovie } from '../store/watchlistSlice';
 import MovieCard from '../components/MovieCard';
 
 const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -13,7 +14,8 @@ const PROFILE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 const MovieDetails = () => {
   const { id, mediaType } = useParams();
   const navigate = useNavigate();
-  const { watchlist, addToWatchlist, removeFromWatchlist, rateMovie } = useStore();
+  const watchlist = useSelector((state) => state.watchlist.watchlist);
+  const dispatch = useDispatch();
   const [showTrailer, setShowTrailer] = useState(false);
 
   const { data: movie, isLoading, isError, error } = useQuery({
@@ -35,8 +37,8 @@ const MovieDetails = () => {
   const isWatchlisted = !!watchlistedMovie;
   
   const toggleWatchlist = () => {
-    if (isWatchlisted) removeFromWatchlist(movie.id);
-    else addToWatchlist({ ...movie, media_type: mediaType });
+    if (isWatchlisted) dispatch(removeFromWatchlist(movie.id));
+    else dispatch(addToWatchlist({ ...movie, media_type: mediaType }));
   };
 
   const isTv = mediaType === 'tv';
@@ -142,7 +144,7 @@ const MovieDetails = () => {
                   {[1,2,3,4,5].map(star => (
                     <button 
                       key={star}
-                      onClick={() => rateMovie(movie.id, star)}
+                      onClick={() => dispatch(rateMovie({ id: movie.id, rating: star }))}
                       className="focus:outline-none transform hover:scale-125 transition-transform"
                     >
                       <Star className={`w-7 h-7 ${watchlistedMovie?.userRating >= star ? 'text-yellow-400 fill-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-slate-600'}`} />

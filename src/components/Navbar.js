@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Film, Heart } from 'lucide-react';
-import { useStore } from '../store/useStore';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const watchlist = useStore((state) => state.watchlist);
+  const watchlist = useSelector((state) => state.watchlist.watchlist);
   const navigate = useNavigate();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useStore } from '../store/useStore';
+import { useSelector } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Watchlist = () => {
-  const watchlist = useStore((state) => state.watchlist);
+  const watchlist = useSelector((state) => state.watchlist.watchlist);
 
   return (
     <div className="space-y-8 animate-in fade-in pt-24 pb-20">
