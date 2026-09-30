@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { useInView } from 'react-intersection-observer';
 import { useDebounce } from 'use-debounce';
-import { Search, Loader2, Play, TrendingUp, Filter, X, SlidersHorizontal } from 'lucide-react';
+import { Search, Loader2, Play, TrendingUp, Filter, SlidersHorizontal } from 'lucide-react';
 import { fetchMovies, fetchGenres } from '../services/api';
 import MovieCard from '../components/MovieCard';
 import { Link } from 'react-router-dom';
