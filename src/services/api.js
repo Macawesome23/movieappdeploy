@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'a8eed037a4589e77e65b268438fb2c1a';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY || 'a8eed037a4589e77e65b268438fb2c1a';
 const BASE_URL = 'https://api.tmdb.org/3';
 
 export const fetchGenres = async () => {
